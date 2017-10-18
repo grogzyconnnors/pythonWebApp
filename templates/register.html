@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+
+
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+
+     <!--
+      <form name="regForm" method=post onsubmit="return validateForm()">
+    <dl>
+      <dt>Username:
+      <dd><input type=text name=username value="{{
+          request.form.username }}">
+      <dt>Password:
+      <dd><input type=password name=password>
+
+        <dt>Name:
+      <dd><input type=text name=name>
+
+         <dt>Surname:
+      <dd><input type=text name=surname>
+
+
+    </dl>
+<p><input type=submit value=Register></p>
+  </form>
+  -->
+
+
+<form name="regForm" method=post onsubmit="return validateForm()">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Register</h1>
+			</div>
+
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="password">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+                <div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="first name" name="name">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+              <div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="surname" name="surname">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+                <input type="submit" value="Register" class="btn btn-primary btn-large btn-block" >
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,241 @@
+<!doctype html>
+
+
+<title>My Application</title>
+
+<!--File which extends to all others containing scripts, css, jinja etc.-->
+
+<!--jinja to flash messages to user in event of errors-->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+
+
+<script>
+
+//function to resize on mouse in and out
+function bigImg(x) {
+    x.style.height = "300px";
+    x.style.width = "300px";
+}
+
+function normalImg(x) {
+    x.style.height = "100px";
+    x.style.width = "100px";
+}
+
+//function to check all fields are completed on validation
+
+function validateForm()
+    {
+    var a=document.forms["regForm"]["username"].value;
+    var b=document.forms["regForm"]["password"].value;
+    var c=document.forms["regForm"]["name"].value;
+    var d=document.forms["regForm"]["surname"].value;
+    if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="")
+      {
+      alert("Please fill out all fields.");
+      return false;
+      }
+    }
+
+</script>
+
+
+
+<style>
+box-sizing: border-box;
+}
+
+*:focus
+{
+	outline: none;
+}
+body
+{
+font-family: Arial;
+background-color: #3498DB;
+padding: 50px;
+}
+.login
+{
+margin: 20px auto;
+width: 300px;
+}
+.login-screen
+{
+background-color: #FFF;
+padding: 20px;
+border-radius: 5px
+}
+
+.app-title
+{
+text-align: center;
+color: #777;
+}
+
+.login-form
+{
+text-align: center;
+}
+.control-group
+{
+margin-bottom: 10px;
+}
+
+input
+{
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
+}
+
+input:focus
+{
+border: 2px solid #3498DB;
+box-shadow: none;
+}
+
+.btn
+{
+  border: 2px solid transparent;
+  background: #3498DB;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.btn:hover
+{
+  background-color: #2980B9;
+}
+
+.login-link {
+  font-size: 12px;
+  color: #444;
+  display: block;
+	margin-top: 12px;
+}
+
+img
+{
+
+  width: 100px;
+  height: 100px;
+  box-shadow: 8px 8px 10px #aaa;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+.error
+{
+  text-align: center;
+}
+
+p
+{
+  text-align: center;
+
+}
+
+#logout
+{
+  width: 50%;
+}
+
+h1
+{
+ text-align: center;
+}
+
+
+#logouty
+{
+   text-align: center;
+}
+
+.buttono
+{
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    margin-left: 45%;
+    margin-top: 20px;
+}
+
+.buttono:hover
+{
+
+ background: #bbb;
+
+}
+
+ul
+{
+  text-align: center;
+
+}
+
+li
+{
+   list-style-type: none;
+   color: green;
+   margin-left: 5px;
+}
+
+figure
+{
+    display: inline-block;
+
+    margin: 20px;
+}
+figure img
+{
+    vertical-align: top;
+}
+figure figcaption
+{
+    padding-top: 20px;
+    text-align: center;
+}
+
+#mainh1
+{
+  font-size: 3em;
+}
+
+
+ </style>

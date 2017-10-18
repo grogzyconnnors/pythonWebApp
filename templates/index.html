@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+<h1 id="mainh1">Super Cool Image App</h1>
+
+{% if length == 0 %}            <!--Checks that there are images to display,
+                                    nested for loop matches images in static with details in images table
+                                    then displays info under image-->
+
+    <p> No images to display :( </p>
+
+{% else %}
+
+    {% for image_name in image_names %}
+        {% for row in image_list %}
+            {% if image_name == row[0] %}
+                <figure>
+                    <img src="{{ url_for('static', filename = image_name) }}" onmouseover="bigImg(this)" onmouseout="normalImg(this)" />
+                    <figcaption> <b>TITLE:</b> {{row[0]}}  <b>UPLOADER:</b> {{row[1]}} <br>  <b>DATE:</b> {{row[2]}} <b>TIME:</b> {{row[3]}}
+                </figcaption>
+                </figure>
+            {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+
+{% endif %}
+
+
+
+
+
+
+<a class="buttono" href="{{ url_for('login') }}">Login</a>
+ <a class="buttono" href="{{ url_for('register') }}">Register</a>
+
+
+{% endblock %}
+
+

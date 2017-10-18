@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1> Image App </h1>
+
+<p>Welcome to your profile page {{ name}} <br> </p>
+
+
+{% if length == 0 %}                    <!--Checks that there are images to display,
+                                    nested for loop returns only current users images with required descriptions-->
+
+    <p> No images to display :( </p>
+
+{% else %}
+
+    {% for image_name in image_names %}
+        {% for row in image_list %}
+            {% if image_name == row[0] and name == row[1] %}
+                <figure>
+                    <img src="{{ url_for('static', filename = image_name) }}" onmouseover="bigImg(this)" onmouseout="normalImg(this)" />
+                    <figcaption> <b>TITLE:</b> {{row[0]}}   <br>  <b>DATE:</b> {{row[2]}} <b>TIME:</b> {{row[3]}}
+                </figcaption>
+                </figure>
+            {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+
+{% endif %}
+
+
+
+
+
+
+
+<a class="buttono"href="{{ url_for('upload_image') }}">Upload</a>
+
+
+
+    <form  action="/logout" method="post">
+        <input id="logouty" type="submit" value="Logout" class="btn btn-primary btn-large btn-block" >
+    </form>
+
+
+{% endblock %}
