@@ -1,2 +1,3 @@
 # pythonWebApp
-Pyhton photo sharing web app created using Flask and Jinja.
+
+Photo sharing web app.
